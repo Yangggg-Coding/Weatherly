@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="jpg" href="Weather.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weatherly</title>
+  </head>
+  <body>
+    <main class="weather-app">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Weatherly home">
+          <span class="brand-mark">W</span>
+          <span>weatherly</span>
+        </a>
+        <div class="status" id="status-label">
+          <span class="status-dot"></span>Live forecast
+        </div>
+      </header>
+
+      <section class="hero" aria-labelledby="location-heading">
+        <div class="hero-copy">
+          <p class="eyebrow" id="date-label">Monday, September 13, 2026</p>
+          <h1 id="location-heading">
+            Good morning,<br /><span>Seattle.</span>
+          </h1>
+          <p class="summary" id="weather-summary">
+            A calm start to the day with clouds breaking by mid-morning.
+          </p>
+        </div>
+
+        <form class="search" role="search">
+          <label class="sr-only" for="city-search">Search for a city</label>
+          <input
+            id="city-search"
+            type="search"
+            placeholder="Search city"
+            autocomplete="off"
+            aria-autocomplete="list"
+            aria-controls="suggestions"
+            aria-expanded="false"
+            role="combobox"
+          />
+          <button
+            type="button"
+            class="search-clear"
+            id="search-clear"
+            aria-label="Clear search"
+            tabindex="-1"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+            >
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+            </svg>
+          </button>
+          <button type="submit" aria-label="Search for city">&#8594;</button>
+          <div
+            class="suggestions"
+            id="suggestions"
+            role="listbox"
+            aria-expanded="false"
+          ></div>
+        </form>
+      </section>
+
+      <section class="current-weather" aria-label="Current conditions">
+        <div class="temperature-wrap">
+          <div class="weather-symbol" id="weather-symbol" aria-hidden="true">
+            ☼
+          </div>
+          <div>
+            <div class="temperature" id="temperature">18<span>°</span></div>
+            <p class="condition" id="condition">Mostly sunny</p>
+          </div>
+        </div>
+        <div class="feels-like">
+          Feels like <strong id="feels-like">17°</strong>
+        </div>
+        <div class="weather-details">
+          <div><span>High</span><strong id="high">21°</strong></div>
+          <div><span>Low</span><strong id="low">13°</strong></div>
+          <div><span>Wind</span><strong id="wind">8 km/h</strong></div>
+          <div><span>Humidity</span><strong id="humidity">64%</strong></div>
+        </div>
+      </section>
+
+      <section class="forecast-section" aria-labelledby="forecast-heading">
+        <div class="section-heading">
+          <h2 id="forecast-heading">This week</h2>
+          <button
+            class="unit-toggle"
+            type="button"
+            aria-label="Temperature unit"
+          >
+            °C <span>/ °F</span>
+          </button>
+        </div>
+
+        <div class="forecast-list" id="forecast-list">
+          <article class="forecast-day active">
+            <span>Today</span><span class="mini-icon">☼</span
+            ><strong>21°</strong><small>13°</small>
+          </article>
+
+          <article class="forecast-day">
+            <span>Tue</span><span class="mini-icon cloud">☁</span
+            ><strong>19°</strong><small>12°</small>
+          </article>
+
+          <article class="forecast-day">
+            <span>Wed</span><span class="mini-icon rain">☂</span
+            ><strong>16°</strong><small>11°</small>
+          </article>
+
+          <article class="forecast-day">
+            <span>Thu</span><span class="mini-icon cloud">☁</span
+            ><strong>18°</strong><small>10°</small>
+          </article>
+
+          <article class="forecast-day">
+            <span>Fri</span><span class="mini-icon">☼</span><strong>22°</strong
+            ><small>14°</small>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-note">
+      <span id="updated-label">Updated just now</span
+      ><span id="location-meta">Seattle, WA <b>·</b> 47.61° N, 122.33° W</span>
+    </footer>
+    <script src="js.js"></script>
+  </body>
+</html>
